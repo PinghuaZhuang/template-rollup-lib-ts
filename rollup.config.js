@@ -26,6 +26,15 @@ export default [
       format: 'umd',
       sourcemap: true,
     },
+    plugins: [resolve(), babel(), commonjs()],
+  },
+  {
+    input: './es/index.js',
+    output: {
+      name: _.camelCase(pkg.name),
+      file: pkg.browser.replace(/\.js$/, '.min.js'),
+      format: 'umd',
+    },
     plugins: [resolve(), babel(), commonjs(), terser()],
   },
 ];

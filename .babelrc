@@ -12,6 +12,5 @@
         "corejs": "3.33"
       }
     ]
-  ],
-  "exclude": "node_modules/**"
+  ]
 }
