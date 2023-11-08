@@ -17,22 +17,27 @@ export default [
       }),
     ],
   },
+  {
+    input: 'es/index.js',
+    output: { file: './example/lib.js', format: 'es' },
+    plugins: [resolve()],
+  },
   // browser-friendly UMD build
   {
-    input: './es/index.js',
+    input: './example/lib.js',
     output: {
       name: _.camelCase(pkg.name),
-      file: pkg.browser,
+      file: pkg.browser.replace(/\.min.js$/, '.js'),
       format: 'umd',
       sourcemap: true,
     },
     plugins: [resolve(), babel(), commonjs()],
   },
   {
-    input: './es/index.js',
+    input: './example/lib.js',
     output: {
       name: _.camelCase(pkg.name),
-      file: pkg.browser.replace(/\.js$/, '.min.js'),
+      file: pkg.browser,
       format: 'umd',
     },
     plugins: [resolve(), babel(), commonjs(), terser()],
