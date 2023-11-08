@@ -20,7 +20,7 @@ export default [
   {
     input: 'es/index.js',
     output: { file: './example/lib.js', format: 'es' },
-    plugins: [resolve()],
+    plugins: [resolve(), commonjs()],
   },
   // browser-friendly UMD build
   {
