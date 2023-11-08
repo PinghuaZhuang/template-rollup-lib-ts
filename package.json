@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "build": "tsc & rollup -c",
-    "dev": "rollup -c -w"
+    "dev": "pnpm build & live-server ./example"
   },
   "dependencies": {
     "core-js": "^3.33.1",
