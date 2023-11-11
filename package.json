@@ -12,7 +12,8 @@
   "types": "./es",
   "files": [
     "es",
-    "dist"
+    "dist",
+    "example"
   ],
   "scripts": {
     "build": "tsc & rollup -c",
